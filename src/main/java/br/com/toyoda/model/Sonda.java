@@ -1,12 +1,15 @@
 package br.com.toyoda.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 import br.com.toyoda.direction.Direction;
 
-@XmlRootElement
-public class Sonda {
+public class Sonda implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int coordinateX;
 	private int coordinateY;
 	private Direction direction;

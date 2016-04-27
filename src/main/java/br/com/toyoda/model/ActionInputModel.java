@@ -1,19 +1,22 @@
 package br.com.toyoda.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
+public class ActionInputModel implements Serializable {
 
-@XmlRootElement
-public class ActionInputModel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private List<ActionInput> actionInputList;
 
-	private List<ActionInput> actionInput;
-
-	public List<ActionInput> getActionInput() {
-		return actionInput;
+	public List<ActionInput> getActionInputList() {
+		return actionInputList;
 	}
 
-	public void setActionInput(List<ActionInput> actionInput) {
-		this.actionInput = actionInput;
+	public void setActionInputList(List<ActionInput> actionInputList) {
+		this.actionInputList = actionInputList;
 	}
 }

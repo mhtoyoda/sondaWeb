@@ -21,7 +21,8 @@ public class SondaAction {
 		System.out.println(actionInput.getInstructions());
 	}
 	
-	public synchronized void action(ActionInput actionInput, int coordinateLimitInitialX, int coordinateLimitInitialY){
+	public synchronized Sonda action(ActionInput actionInput, int coordinateLimitInitialX, int coordinateLimitInitialY){
+		managerActionMoviment.init();
 		Sonda sonda = actionInput.getSonda();
 		showSondaInput(actionInput);
 		String instructions = StringUtils.trimAllWhitespace(actionInput.getInstructions()).toUpperCase();
@@ -30,5 +31,6 @@ public class SondaAction {
 			MovimentStrategy movimentStrategy = managerActionMoviment.getMovimentStrategy(instruction);
 			sonda = movimentStrategy.executeAction(sonda);
 		}
+		return sonda;
 	}
 }

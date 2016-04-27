@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @ImportResource("classpath:applicationContext.xml")
 public class SondaWebApplication {
-    
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SondaWebApplication.class, args);
 	}

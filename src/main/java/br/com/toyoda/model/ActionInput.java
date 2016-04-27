@@ -1,10 +1,13 @@
 package br.com.toyoda.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class ActionInput {
+public class ActionInput implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Sonda sonda;
 	private String instructions;
 
