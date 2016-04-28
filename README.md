@@ -7,7 +7,10 @@ Seguindo uma série de instruções de coordenadas e tendo como retorno a posiç
 *Na implementação assumiu-se que o ponto superior direito da malha é x = 5 e y = 5
 *Caso as intruções de movimento ultrapassem o limite superior direito da malha, assumi que a posição final, seja da coordenada x ou y será igual
 ao limite x e/ou y da malha do planalto.
-*Para subir o tomcat basta executar o método main da classe SondaWebApplication.
+
+*Para subir o Apache Tomcat basta executar o método main da classe SondaWebApplication.
+
+*Aplicação iniciada em -> http://localhost:8080/
 
 *Requisitos de sistema:
 - IDE Eclipse
