@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import br.com.toyoda.model.ActionInput;
-import br.com.toyoda.model.Planalto;
 import br.com.toyoda.model.Sonda;
 import br.com.toyoda.moviment.ManagerActionMoviment;
 import br.com.toyoda.moviment.MovimentStrategy;
@@ -31,7 +30,6 @@ public class SondaAction {
 		Sonda sonda = actionInput.getSonda();
 		showSondaInput(actionInput);
 		String instructions = StringUtils.trimAllWhitespace(actionInput.getInstructions()).toUpperCase();
-		log.info(Planalto.MALHA_MARTE.getCoordenadaLimitX()+" "+Planalto.MALHA_MARTE.getCoordenadaLimitY());
 		for(int index = 0; index < instructions.length(); index++){
 			String instruction = String.valueOf(instructions.charAt(index));
 			MovimentStrategy movimentStrategy = managerActionMoviment.getMovimentStrategy(instruction);
