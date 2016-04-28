@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,11 +26,9 @@ public class SondaService {
 	@Autowired
 	private SondaAction sondaService;
 	
-	@RequestMapping(value = "/planalto/{coordenadaLimitX}/{coordenadaLimitY}", method = RequestMethod.POST,
+	@RequestMapping(value = "/sonda", method = RequestMethod.POST,
 					consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Sonda>> moveSonda(@RequestBody String json,
-												 @PathVariable("coordenadaLimitX") int coordenadaLimitX,
-												 @PathVariable("coordenadaLimitY") int coordenadaLimitY){
+	public ResponseEntity<List<Sonda>> moveSonda(@RequestBody String json){
 		
 		List<Sonda> result = new ArrayList<Sonda>();
 		ActionInputModel actionInputModel = null;
@@ -41,7 +38,7 @@ public class SondaService {
 			return new ResponseEntity<List<Sonda>>(result, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		for (ActionInput actionInput : actionInputModel.getActionInputList()) {
-			Sonda sonda = sondaService.action(actionInput, coordenadaLimitX, coordenadaLimitY);
+			Sonda sonda = sondaService.action(actionInput);
 			result.add(sonda);
 		}
 		return new ResponseEntity<List<Sonda>>(result, HttpStatus.OK); 

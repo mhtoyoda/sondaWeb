@@ -1,6 +1,7 @@
 package br.com.toyoda.orientation;
 
 import br.com.toyoda.direction.Direction;
+import br.com.toyoda.model.Planalto;
 import br.com.toyoda.model.Sonda;
 
 public class WestMoviment implements OrientationMoviment {
@@ -17,7 +18,9 @@ public class WestMoviment implements OrientationMoviment {
 
 	@Override
 	public Sonda moviment(Sonda sonda) {
-		sonda.setCoordinateX(sonda.getCoordinateX() - 1);
+	    if(Planalto.MALHA_MARTE.getCoordenadaMinimoX() <= (sonda.getCoordinateX() - 1)){	        
+	        sonda.setCoordinateX(sonda.getCoordinateX() - 1);
+	    }
 		return sonda;
 	}
 }
